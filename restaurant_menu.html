@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Belle Cuisine - Fine Dining</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23d4af37" width="1200" height="400"/></svg>');
+            background-size: cover;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .restaurant-name {
+            font-size: 3.5em;
+            color: #d4af37;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #f5f5f5;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        .location {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #d4af37;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .menu-category {
+            margin-bottom: 60px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-title {
+            font-size: 2.5em;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .menu-items {
+            display: grid;
+            gap: 25px;
+        }
+
+        .menu-item {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(212,175,55,0.3);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-size: 1.4em;
+            color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .item-price {
+            font-size: 1.3em;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .item-description {
+            color: #cccccc;
+            font-size: 0.95em;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.5);
+            border-top: 2px solid #d4af37;
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            color: #d4af37;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            color: #cccccc;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .restaurant-name {
+                font-size: 2.5em;
+                letter-spacing: 4px;
+            }
+
+            .category-title {
+                font-size: 2em;
+            }
+
+            .item-name {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="restaurant-name">LA BELLE CUISINE</h1>
+        <p class="tagline">Fine Dining Experience</p>
+        <p class="location">📍 Dharampeth, Nagpur - Maharashtra</p>
+    </div>
+
+    <div class="container">
+        <!-- Appetizers -->
+        <div class="menu-category">
+            <h2 class="category-title">APPETIZERS</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Bruschetta al Pomodoro</span>
+                        <span class="item-price">₹320</span>
+                    </div>
+                    <p class="item-description">Grilled artisan bread topped with fresh tomatoes, basil, garlic, and extra virgin olive oil</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Crispy Calamari</span>
+                        <span class="item-price">₹450</span>
+                    </div>
+                    <p class="item-description">Lightly battered squid rings served with tangy marinara sauce and lemon wedges</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Cheese Fondue</span>
+                        <span class="item-price">₹550</span>
+                    </div>
+                    <p class="item-description">Rich blend of Gruyère and Emmental cheese with white wine, served with fresh vegetables and bread</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Stuffed Mushrooms</span>
+                        <span class="item-price">₹380</span>
+                    </div>
+                    <p class="item-description">Button mushrooms filled with herbs, cheese, and breadcrumbs, baked to perfection</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Course -->
+        <div class="menu-category">
+            <h2 class="category-title">MAIN COURSE</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Grilled Salmon with Asparagus</span>
+                        <span class="item-price">₹850</span>
+                    </div>
+                    <p class="item-description">Atlantic salmon fillet grilled to perfection, served with buttered asparagus and lemon butter sauce</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Filet Mignon</span>
+                        <span class="item-price">₹1,200</span>
+                    </div>
+                    <p class="item-description">Premium beef tenderloin, grilled to your preference with truffle mashed potatoes and seasonal vegetables</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Risotto ai Funghi</span>
+                        <span class="item-price">₹680</span>
+                    </div>
+                    <p class="item-description">Creamy Arborio rice cooked with wild mushrooms, parmesan, and white wine</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Herb Roasted Chicken</span>
+                        <span class="item-price">₹720</span>
+                    </div>
+                    <p class="item-description">Free-range chicken marinated in herbs, roasted golden brown with roasted vegetables and rosemary jus</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Vegetable Wellington</span>
+                        <span class="item-price">₹650</span>
+                    </div>
+                    <p class="item-description">Seasonal vegetables wrapped in flaky puff pastry with mushroom duxelles and red wine reduction</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desserts -->
+        <div class="menu-category">
+            <h2 class="category-title">DESSERTS</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Tiramisu</span>
+                        <span class="item-price">₹380</span>
+                    </div>
+                    <p class="item-description">Classic Italian dessert with espresso-soaked ladyfingers, mascarpone cream, and cocoa powder</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Chocolate Lava Cake</span>
+                        <span class="item-price">₹420</span>
+                    </div>
+                    <p class="item-description">Warm chocolate cake with molten center, served with vanilla ice cream and berry compote</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Crème Brûlée</span>
+                        <span class="item-price">₹350</span>
+                    </div>
+                    <p class="item-description">Silky vanilla custard topped with caramelized sugar crust</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Fresh Fruit Tart</span>
+                        <span class="item-price">₹320</span>
+                    </div>
+                    <p class="item-description">Buttery tart shell filled with pastry cream and topped with seasonal fresh fruits</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beverages -->
+        <div class="menu-category">
+            <h2 class="category-title">BEVERAGES</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Freshly Brewed Coffee</span>
+                        <span class="item-price">₹180</span>
+                    </div>
+                    <p class="item-description">Premium Arabica beans, espresso, cappuccino, or latte</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Signature Mocktails</span>
+                        <span class="item-price">₹280</span>
+                    </div>
+                    <p class="item-description">Chef's special non-alcoholic cocktails made with fresh fruits and herbs</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Fresh Fruit Juices</span>
+                        <span class="item-price">₹220</span>
+                    </div>
+                    <p class="item-description">Seasonal fresh juices - Orange, Watermelon, Pineapple, or Mixed Fruit</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header">
+                        <span class="item-name">Premium Teas</span>
+                        <span class="item-price">₹200</span>
+                    </div>
+                    <p class="item-description">Selection of green, black, herbal, and specialty teas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="footer-text">Open Daily: 12:00 PM - 11:00 PM</p>
+        <p class="contact-info">Reservations: +91 98765 43210 | labellecuisine@email.com</p>
+        <p class="contact-info">Near Central Mall, Dharampeth, Nagpur - 440010</p>
+    </div>
+</body>
+</html>
