@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Book Catalogue</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-book-open"></i> Library Catalogue
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Book Collection</h1>
+                <p>Manage your personal library with ease</p>
+            </header>
+
+            <div class="stats-bar">
+                <div class="stat-box">
+                    <i class="fas fa-books"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="capacity">10</span>
+                        <span class="stat-label">Total Capacity</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-book"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="currentCount">0</span>
+                        <span class="stat-label">Books in Library</span>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-slot"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="availableSlots">10</span>
+                        <span class="stat-label">Available Slots</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by title...">
+                </div>
+                <button class="add-book-btn" id="addBookBtn">
+                    <i class="fas fa-plus"></i> Add Book
+                </button>
+            </div>
+
+            <div class="books-grid" id="booksGrid">
+                <div class="empty-library" id="emptyState">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Your library is empty</h3>
+                    <p>Add your first book to get started</p>
+                </div>
+            </div>
+
+            <div class="message-box" id="messageBox"></div>
+        </div>
+    </main>
+
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Book</h2>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="bookForm">
+                <div class="form-group">
+                    <label for="bookTitle">Book Title</label>
+                    <input type="text" id="bookTitle" required placeholder="Enter book title">
+                </div>
+                <div class="form-group">
+                    <label for="bookAuthor">Author</label>
+                    <input type="text" id="bookAuthor" required placeholder="Enter author name">
+                </div>
+                <div class="form-group">
+                    <label for="bookYear">Year</label>
+                    <input type="number" id="bookYear" required placeholder="Publication year" min="1000" max="2026">
+                </div>
+                <div class="form-group">
+                    <label for="bookGenre">Genre</label>
+                    <select id="bookGenre" required>
+                        <option value="">Select genre</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Non-Fiction">Non-Fiction</option>
+                        <option value="Science">Science</option>
+                        <option value="Technology">Technology</option>
+                        <option value="History">History</option>
+                        <option value="Biography">Biography</option>
+                        <option value="Self-Help">Self-Help</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Fantasy">Fantasy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookCover">Cover Color</label>
+                    <div class="color-options">
+                        <input type="radio" name="coverColor" id="color1" value="#e74c3c" checked>
+                        <label for="color1" class="color-option" style="background: #e74c3c;"></label>
+                        <input type="radio" name="coverColor" id="color2" value="#3498db">
+                        <label for="color2" class="color-option" style="background: #3498db;"></label>
+                        <input type="radio" name="coverColor" id="color3" value="#2ecc71">
+                        <label for="color3" class="color-option" style="background: #2ecc71;"></label>
+                        <input type="radio" name="coverColor" id="color4" value="#9b59b6">
+                        <label for="color4" class="color-option" style="background: #9b59b6;"></label>
+                        <input type="radio" name="coverColor" id="color5" value="#f39c12">
+                        <label for="color5" class="color-option" style="background: #f39c12;"></label>
+                        <input type="radio" name="coverColor" id="color6" value="#1abc9c">
+                        <label for="color6" class="color-option" style="background: #1abc9c;"></label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-save"></i> Save Book
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Library Catalogue. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

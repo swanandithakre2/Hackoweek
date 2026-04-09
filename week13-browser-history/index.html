@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser History Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-globe"></i> BrowserSim
+            </a>
+            <div class="stack-info">
+                <span class="info-badge">Stack Size: <span id="stackSize">0</span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="browser-window">
+                <div class="browser-header">
+                    <div class="window-controls">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="url-bar">
+                        <i class="fas fa-lock"></i>
+                        <span id="currentUrl">about:blank</span>
+                    </div>
+                </div>
+                <div class="browser-content" id="browserContent">
+                    <div class="welcome-page">
+                        <i class="fas fa-globe globe-icon"></i>
+                        <h2>Welcome to BrowserSim</h2>
+                        <p>Visit pages and navigate back/forward using the stack</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-controls">
+                <button class="nav-btn back-btn" onclick="goBack()" id="backBtn" disabled>
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back</span>
+                </button>
+                <button class="nav-btn forward-btn" onclick="goForward()" id="forwardBtn" disabled>
+                    <span>Forward</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="home-btn" onclick="goHome()">
+                    <i class="fas fa-home"></i>
+                </button>
+            </div>
+
+            <div class="page-grid">
+                <h3><i class="fas fa-bookmark"></i> Quick Pages</h3>
+                <div class="pages-list" id="pagesList"></div>
+            </div>
+
+            <div class="stack-visualization">
+                <h3><i class="fas fa-layer-group"></i> Stack Visualization (Back History)</h3>
+                <div class="stack-container" id="stackContainer">
+                    <div class="empty-stack">Stack is empty</div>
+                </div>
+                <div class="stack-operations">
+                    <div class="operation">
+                        <span class="op-label">Top:</span>
+                        <span class="op-value" id="stackTop">NULL</span>
+                    </div>
+                    <div class="operation">
+                        <span class="op-label">Size:</span>
+                        <span class="op-value" id="stackSizeDisplay">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3><i class="fas fa-history"></i> Visit History</h3>
+                <div class="history-list" id="historyList">
+                    <p class="empty-history">No pages visited yet</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="message-toast" id="messageToast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 BrowserSim - Stack Data Structure Demo</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

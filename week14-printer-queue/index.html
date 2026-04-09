@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrintHub - Printer Queue Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-print"></i> PrintHub
+            </a>
+            <div class="printer-status">
+                <div class="status-indicator"></div>
+                <span>Printer Ready</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="printer-display">
+                <div class="printer-mockup">
+                    <div class="printer-body">
+                        <div class="printer-tray">
+                            <div class="paper" id="currentPaper">
+                                <span>Ready</span>
+                            </div>
+                        </div>
+                        <div class="printer-screen">
+                            <span id="printerScreenText">QUEUE: 0</span>
+                        </div>
+                        <div class="printer-lights">
+                            <span class="light green"></span>
+                            <span class="light"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <i class="fas fa-inbox"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="queueCount">0</span>
+                        <span class="stat-label">In Queue</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="completedCount">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <span class="stat-number" id="avgTime">0s</span>
+                        <span class="stat-label">Avg. Time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-job-section">
+                <h3><i class="fas fa-plus-circle"></i> Add Print Job</h3>
+                <form id="jobForm" class="job-form">
+                    <div class="form-row">
+                        <input type="text" id="jobName" placeholder="Document name" required>
+                        <select id="jobPages">
+                            <option value="1">1 page</option>
+                            <option value="3">3 pages</option>
+                            <option value="5">5 pages</option>
+                            <option value="10">10 pages</option>
+                            <option value="20">20 pages</option>
+                        </select>
+                        <select id="jobPriority">
+                            <option value="normal">Normal</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-plus"></i> Add to Queue
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="queue-section">
+                <h3><i class="fas fa-list-ol"></i> Print Queue (FIFO Order)</h3>
+                <div class="queue-container">
+                    <div class="queue-visual" id="queueVisual">
+                        <div class="empty-queue">
+                            <i class="fas fa-print"></i>
+                            <p>No jobs in queue</p>
+                        </div>
+                    </div>
+                    
+                    <div class="queue-list" id="queueList">
+                        <p class="empty-list">Queue is empty</p>
+                    </div>
+                </div>
+
+                <div class="queue-controls">
+                    <button class="control-btn print-btn" onclick="processNextJob()" id="printBtn" disabled>
+                        <i class="fas fa-play"></i> Print Next (Dequeue)
+                    </button>
+                    <button class="control-btn clear-btn" onclick="clearQueue()" id="clearBtn" disabled>
+                        <i class="fas fa-trash"></i> Clear Queue
+                    </button>
+                    <button class="control-btn auto-btn" onclick="toggleAutoPrint()" id="autoBtn">
+                        <i class="fas fa-sync"></i> Auto Print
+                    </button>
+                </div>
+            </div>
+
+            <div class="completed-section">
+                <h3><i class="fas fa-check-double"></i> Completed Jobs</h3>
+                <div class="completed-list" id="completedList">
+                    <p class="empty-completed">No completed jobs yet</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="message-toast" id="messageToast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 PrintHub - Queue Data Structure Demo</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

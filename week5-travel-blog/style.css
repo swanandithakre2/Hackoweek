@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+:root {
+    --primary: #f59e0b;
+    --primary-dark: #d97706;
+    --secondary: #7c2d12;
+    --accent: #fed7aa;
+    --bg-light: #fffbeb;
+    --bg-white: #ffffff;
+    --text-dark: #451a03;
+    --text-gray: #92400e;
+    --border: #fef3c7;
+    --shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
+    --shadow-lg: 0 15px 35px rgba(245, 158, 11, 0.22);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: var(--bg-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background: var(--bg-white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--secondary);
+    transition: color 0.3s;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--secondary);
+}
+
+.hero {
+    height: 520px;
+    background: linear-gradient(rgba(245, 158, 11, 0.85), rgba(217, 119, 6, 0.85)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=600&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="30" r="2" fill="white" opacity="0.25"/><circle cx="70" cy="60" r="2.5" fill="white" opacity="0.2"/><circle cx="40" cy="80" r="1.5" fill="white" opacity="0.22"/></svg>');
+    background-size: 140px 140px;
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    max-width: 720px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    margin-bottom: 22px;
+    letter-spacing: 4px;
+}
+
+.hero p {
+    font-size: 1.35rem;
+    opacity: 0.95;
+}
+
+.main-content {
+    padding: 70px 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 45px;
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 35px;
+    color: var(--secondary);
+    position: relative;
+    padding-bottom: 18px;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 65px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.blog-card {
+    background: var(--bg-white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 35px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-image {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.06);
+}
+
+.blog-date {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    background: var(--primary);
+    color: white;
+    padding: 7px 16px;
+    border-radius: 22px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.blog-content {
+    padding: 32px;
+}
+
+.blog-content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--secondary);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.blog-location {
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.95rem;
+}
+
+.blog-excerpt {
+    color: var(--text-gray);
+    margin-bottom: 22px;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.read-more {
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.read-more:hover {
+    color: var(--primary);
+    transform: translateX(6px);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.sidebar-section {
+    background: var(--bg-white);
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+}
+
+.sidebar-section h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 1px;
+}
+
+.sidebar-section h3 i {
+    color: var(--primary);
+}
+
+.tips-list {
+    list-style: none;
+}
+
+.tips-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.tips-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.tips-list h4 {
+    font-size: 1.02rem;
+    color: var(--secondary);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.tips-list p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.newsletter-form input {
+    padding: 14px 17px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.newsletter-form button {
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: var(--primary-dark);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-avatar {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 18px;
+    border: 3px solid var(--primary);
+}
+
+.about-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.footer {
+    background: var(--secondary);
+    color: white;
+    padding: 65px 0 35px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.footer-brand h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-brand p {
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-4px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-section {
+        flex: 1;
+        min-width: 290px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero {
+        height: 420px;
+    }
+
+    .sidebar-section {
+        min-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 22px;
+    }
+}

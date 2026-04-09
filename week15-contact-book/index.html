@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactHub - Smart Contact Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-address-book"></i> ContactHub
+            </a>
+            <div class="contact-count">
+                <span id="contactCount">0</span> Contacts
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="search-section">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search contacts by name...">
+                    <button class="search-btn" onclick="performBinarySearch()">
+                        <i class="fas fa-binary"></i> Binary Search
+                    </button>
+                </div>
+                <div class="search-info" id="searchInfo">
+                    <span class="info-badge">
+                        <i class="fas fa-sort"></i> Sorted alphabetically
+                    </span>
+                    <span class="info-badge highlight">
+                        <i class="fas fa-bolt"></i> O(log n) search
+                    </span>
+                </div>
+            </div>
+
+            <div class="binary-search-demo" id="binarySearchDemo">
+                <h3><i class="fas fa-project-diagram"></i> Binary Search Visualization</h3>
+                <div class="search-steps" id="searchSteps">
+                    <p class="placeholder">Enter a name and click Binary Search to see the algorithm in action</p>
+                </div>
+            </div>
+
+            <div class="add-contact-section">
+                <h3><i class="fas fa-user-plus"></i> Add New Contact</h3>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="contactName" placeholder="Enter name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" id="contactPhone" placeholder="Enter phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="contactEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="contactCategory">
+                                <option value="Friend">Friend</option>
+                                <option value="Family">Family</option>
+                                <option value="Work">Work</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="add-btn">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="contacts-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-users"></i> All Contacts</h3>
+                    <button class="sort-btn" onclick="sortContacts()">
+                        <i class="fas fa-sort-alpha-down"></i> Sort A-Z
+                    </button>
+                </div>
+                
+                <div class="contacts-grid" id="contactsGrid">
+                    <div class="empty-contacts">
+                        <i class="fas fa-user-friends"></i>
+                        <h4>No contacts yet</h4>
+                        <p>Add your first contact above</p>
+                    </div>
+                </div>
+
+                <div class="alphabet-nav" id="alphabetNav">
+                    <button onclick="scrollToLetter('A')">A</button>
+                    <button onclick="scrollToLetter('B')">B</button>
+                    <button onclick="scrollToLetter('C')">C</button>
+                    <button onclick="scrollToLetter('D')">D</button>
+                    <button onclick="scrollToLetter('E')">E</button>
+                    <button onclick="scrollToLetter('F')">F</button>
+                    <button onclick="scrollToLetter('G')">G</button>
+                    <button onclick="scrollToLetter('H')">H</button>
+                    <button onclick="scrollToLetter('I')">J</button>
+                    <button onclick="scrollToLetter('K')">K</button>
+                    <button onclick="scrollToLetter('L')">L</button>
+                    <button onclick="scrollToLetter('M')">M</button>
+                    <button onclick="scrollToLetter('N')">N</button>
+                    <button onclick="scrollToLetter('O')">O</button>
+                    <button onclick="scrollToLetter('P')">P</button>
+                    <button onclick="scrollToLetter('Q')">Q</button>
+                    <button onclick="scrollToLetter('R')">R</button>
+                    <button onclick="scrollToLetter('S')">S</button>
+                    <button onclick="scrollToLetter('T')">T</button>
+                    <button onclick="scrollToLetter('U')">U</button>
+                    <button onclick="scrollToLetter('V')">V</button>
+                    <button onclick="scrollToLetter('W')">W</button>
+                    <button onclick="scrollToLetter('X')">X</button>
+                    <button onclick="scrollToLetter('Y')">Y</button>
+                    <button onclick="scrollToLetter('Z')">Z</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="message-toast" id="messageToast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ContactHub - Array & Binary Search Demo</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

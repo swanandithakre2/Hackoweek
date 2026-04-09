@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Challenge Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quiz-container">
+        <header class="quiz-header">
+            <h1><i class="fas fa-atom"></i> Science Challenge</h1>
+            <p>Test your scientific knowledge!</p>
+        </header>
+
+        <div class="quiz-content" id="quizContent">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            
+            <div class="question-counter">
+                Question <span id="currentQuestion">1</span> of <span id="totalQuestions">5</span>
+            </div>
+
+            <div class="question-box" id="questionBox">
+                <h2 id="questionText"></h2>
+            </div>
+
+            <div class="options" id="optionsContainer">
+            </div>
+
+            <div class="quiz-footer">
+                <button class="next-btn" id="nextBtn" onclick="nextQuestion()" disabled>
+                    Next Question <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="result-box" id="resultBox" style="display: none;">
+            <div class="result-icon" id="resultIcon">
+                <i class="fas fa-flask"></i>
+            </div>
+            <h2>Experiment Complete!</h2>
+            <div class="score-display">
+                <span class="score-label">Your Score</span>
+                <span class="score-value"><span id="scoreValue">0</span>/5</span>
+            </div>
+            <p class="result-message" id="resultMessage"></p>
+            <button class="restart-btn" onclick="restartQuiz()">
+                <i class="fas fa-redo"></i> Try Again
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

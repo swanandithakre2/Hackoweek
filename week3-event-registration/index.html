@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Vibes Festival 2024 | Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <img src="https://picsum.photos/seed/festival/1920/500" alt="Music Festival" class="header-bg">
+        <div class="header-overlay"></div>
+        <div class="container">
+            <div class="event-branding">
+                <div class="event-icon"><i class="fas fa-music"></i></div>
+                <h1>Summer Vibes Festival</h1>
+                <p class="event-tagline">Feel the Rhythm. Live the Moment.</p>
+                <p class="event-date"><i class="fas fa-calendar"></i> July 20-22, 2024</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Get Your Tickets</h2>
+                    <p>Join thousands of music lovers for the ultimate summer experience!</p>
+                </div>
+
+                <form id="registrationForm" class="registration-form">
+                    <div class="form-group">
+                        <label for="fullName">
+                            <i class="fas fa-user"></i> Full Name
+                        </label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email Address
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fas fa-phone"></i> Phone Number
+                        </label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="college">
+                            <i class="fas fa-users"></i> Group Size
+                        </label>
+                        <input type="text" id="college" name="college" placeholder="Number of people in your group">
+                        <span class="error-message" id="collegeError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event">
+                            <i class="fas fa-ticket-alt"></i> Ticket Type
+                        </label>
+                        <select id="event" name="event">
+                            <option value="">-- Select ticket type --</option>
+                            <option value="day1">Day Pass - $49</option>
+                            <option value="day2">Weekend Pass - $119</option>
+                            <option value="vip">VIP Pass - $249</option>
+                            <option value="group">Group Package (5+) - $99 each</option>
+                        </select>
+                        <span class="error-message" id="eventError"></span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-ticket"></i> Book Now
+                    </button>
+                </form>
+            </div>
+
+            <div class="event-info">
+                <div class="info-card">
+                    <i class="fas fa-guitar"></i>
+                    <h3>30+ Live Acts</h3>
+                    <p>Top artists from around the world performing live</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-campground"></i>
+                    <h3>Camping Included</h3>
+                    <p>Free camping with premium festival access</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food & Drinks</h3>
+                    <p>Local food trucks and craft beverages</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="success-modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Booking Confirmed!</h2>
+            <p>See you at Summer Vibes Festival 2024!</p>
+            <p class="registration-id">Booking ID: <span id="regId"></span></p>
+            <p>Check your email for the ticket details.</p>
+            <button class="close-modal-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Summer Vibes Festival. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonSpace | Digital Art Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="gallery-header">
+        <div class="container">
+            <h1><i class="fas fa-ghost"></i> NeonSpace</h1>
+            <p>A curated collection of digital masterpieces</p>
+        </div>
+    </header>
+
+    <main class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://picsum.photos/seed/abstract1/600/600" alt="Abstract Dreams">
+                    <div class="image-overlay">
+                        <span>Abstract Dreams</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://picsum.photos/seed/abstract2/600/600" alt="Neon City">
+                    <div class="image-overlay">
+                        <span>Neon City</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://picsum.photos/seed/abstract3/600/600" alt="Digital Flow">
+                    <div class="image-overlay">
+                        <span>Digital Flow</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://picsum.photos/seed/abstract4/600/600" alt="Cosmic Journey">
+                    <div class="image-overlay">
+                        <span>Cosmic Journey</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://picsum.photos/seed/abstract5/600/600" alt="Ethereal">
+                    <div class="image-overlay">
+                        <span>Ethereal</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://picsum.photos/seed/abstract6/600/600" alt="Urban Chaos">
+                    <div class="image-overlay">
+                        <span>Urban Chaos</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(6)">
+                    <img src="https://picsum.photos/seed/abstract7/600/600" alt="Ocean Dreams">
+                    <div class="image-overlay">
+                        <span>Ocean Dreams</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(7)">
+                    <img src="https://picsum.photos/seed/abstract8/600/600" alt="Midnight">
+                    <div class="image-overlay">
+                        <span>Midnight</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(8)">
+                    <img src="https://picsum.photos/seed/abstract9/600/600" alt="Serenity">
+                    <div class="image-overlay">
+                        <span>Serenity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <button class="lightbox-nav prev" onclick="prevImage()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image" id="lightboxImage">
+            </div>
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+        </div>
+        
+        <button class="lightbox-nav next" onclick="nextImage()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 NeonSpace Gallery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
